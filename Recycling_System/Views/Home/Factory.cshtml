@@ -1,0 +1,87 @@
+﻿
+<style>
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: green 2px solid;
+        border-radius: 5px;
+        margin: 50px 300px 50px 300px;
+        padding: 20px;
+        
+    }
+
+    
+</style>
+<div class="center">
+    @using (Html.BeginForm("Factory", "Home", FormMethod.Post))
+    {
+        <form>
+            <H3 style="color:green">Factory requirements</H3>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text "> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="sponsor" class="form-control" placeholder="Sponsor" type="text">
+            </div>
+            <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-balance-scale" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <input name="jetfuel" class="form-control" placeholder="Jet Fuel " type="number">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-shopping-bag" aria-hidden="true"></i></span>
+                </div>
+
+                <input name="gate" class="form-control" placeholder="Factories" type="number">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-clone" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <select class="form-control" name="factoryType">
+                    <option value="None">Factory Type</option>
+                    <option value="Assembly Line">Assembly Line</option>
+                    <option value="Texttile">Texttile</option>
+                    <option value="Electronics">Electronics</option>
+                </select>
+            </div> <!-- form-group end.// -->
+
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-th" aria-hidden="true"></i> </span>
+                </div>
+                <input class="form-control" placeholder="Expected Jobs Offered" type="text" name="jobs">
+            </div>
+            <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+
+
+                    </span>
+                </div>
+                <select class="form-control" name="energyGrade">
+                    <option value="None">Energy Grading</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div> <!-- form-group end.// -->
+            <input type="submit" class="btn btn-success" value="Submit"/>
+        </form>
+    }
+
+
+</div>
+   

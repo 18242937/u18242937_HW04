@@ -1,0 +1,155 @@
+﻿@using u18242937_HW04.Models;
+@model IEnumerable<u18242937_HW04.Models.Energy>
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Factories</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Sponsor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JetFuel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gate)
+        </th>
+        <th>
+            Factory Type
+        </th>
+        <th>
+            Factory Units
+        </th>
+        <th>
+           Jobs
+        </th>
+        <th>
+           Operating Cost
+        </th>
+        <th>
+           Total cost
+        </th>
+
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.GetType() == typeof(Factory))
+        {
+            Factory factory = (Factory)item;
+
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => factory.Sponsor)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => factory.JetFuel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => factory.Gate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => factory.FactoryType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => factory.JetFuel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => factory.Jobs)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => factory.EnergyGrade)
+    </td>
+    <td>
+        @item.AccumulatedCost()
+    </td>
+
+
+
+    <td>
+        @Html.ActionLink("Edit", "EditNonEntry", new { id = item.RecycleID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.RecycleID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.RecycleID })
+    </td>
+</tr>
+
+        }
+    }
+</table>
+
+
+
+<h2>Airline Attributes</h2>
+<!--  Table-->
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sponsor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JetFuel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gate)
+            </th>
+            <th>
+                Airlines
+            </th>
+            <th>
+                Jobs Created
+            </th>
+            <th>
+                Total Cost
+            </th>
+            <th>
+                Pull Cost
+            </th>
+
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            if (item.GetType() == typeof(Airlines))
+            {
+                Airlines renewableEnergy = (Airlines)item;
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => renewableEnergy.Sponsor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => renewableEnergy.JetFuel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => renewableEnergy.Gate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => renewableEnergy.AirlineType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => renewableEnergy.LandingZones)
+        </td>
+        <td>
+            @item.AccumulatedCost();
+        </td>
+        <td>
+            @item.CalculateCost();
+        </td>
+        <td>
+
+        <td>
+            @Html.ActionLink("Edit", "EditreEntry", new { id = item.RecycleID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.RecycleID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.RecycleID })
+        </td>
+    </tr>
+
+            }
+        }
+
+    </table>

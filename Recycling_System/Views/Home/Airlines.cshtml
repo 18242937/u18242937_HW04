@@ -1,0 +1,68 @@
+﻿
+<style>
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: green 2px solid;
+        border-radius: 5px;
+        margin: 50px 300px 50px 300px;
+        padding: 20px;
+    }
+</style>
+<div class="center">
+    @using (Html.BeginForm("Airlines", "Home", FormMethod.Post))
+    {
+        <form>
+            <H3 style="color:green">Airport Infrustructure</H3>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text ">  </span>
+                </div>
+                <input name="sponsor" class="form-control" placeholder="Sponsor" type="text">
+            </div>
+            <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        
+                    </span>
+                </div>
+                <input name="jetfuel" class="form-control" placeholder="Jet Fuel usable " type="number">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> </span>
+                </div>
+
+                <input name="gate" class="form-control" placeholder="Luggage Gate units" type="number">
+            </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        
+                    </span>
+                </div>
+                <select class="form-control" name="airLineType">
+                    <option value="None">Airline Type</option>
+                    <option value="Legacy">Legacy</option>
+                    <option value="LCC">LCC</option>
+                    <option value="ULCC">ULCC</option>
+                </select>
+            </div> <!-- form-group end.// -->
+
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> </span>
+                </div>
+                <input class="form-control" placeholder="Amount of Landing zones" type="number" name="landingZone">
+            </div>
+            <!-- form-group// -->
+           
+            <input type="submit" class="btn btn-success" value="Submit" />
+        </form>
+    }
+
+
+</div>
+
